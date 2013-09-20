@@ -26,6 +26,8 @@ var myAppConfig = angular.module('myAppConfig', ['ngCookies','ngResource', 'anal
     $routeProvider.when('/problemcontribution_admin', {templateUrl: 'bisa/problemcontribution_admin.html', controller: IndexController});
     $routeProvider.when('/masterycoaching', {templateUrl: 'bisa/masterycoaching.html', controller: IndexController});
     $routeProvider.when('/masterycoaching_quiz', {templateUrl: 'bisa/masterycoaching_quiz.html', controller: IndexController});
+    $routeProvider.when('/tournament_live_ranking', {templateUrl: 'bisa/tournament_live_ranking.html', controller: IndexController});
+    $routeProvider.when('/round_detail', {templateUrl: 'bisa/round_detail.html', controller: IndexController});
     $routeProvider.otherwise({redirectTo: '/home'});
     
 

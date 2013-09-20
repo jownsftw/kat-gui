@@ -1,0 +1,86 @@
+<style type="text/css">
+	#overall
+	{
+		border: 1px solid black;
+	}
+
+	.questionLayout
+	{
+		list-style-type: none;
+		display: inline;
+	}
+</style>
+
+<br/>
+<div class="container">
+	<div id="overall">
+		<h1>Tournament Name (Tournament Type)</h1>
+
+		<tabset>
+			<tab heading="Round Title 1">
+				<div ng-controller="TournamentLiveController">
+					<table>
+
+						<th>
+							Rank
+						</th>
+						<th>
+							Player
+						</th>
+						<th class="group">
+							Group Name
+						</th>
+						<th class="group">
+							Group Rank
+						</th>
+						<th>
+							1  2  3  4  5
+						</th>
+						<th>
+							Last Solved
+						</th>
+
+						<tr ng-repeat="player in players" >
+     
+          					<td>{{$index + 1}}</td>
+							<td>{{player.name}}</td>
+							<td class="group">{{player.groupName}}</td>
+							<td class="group">{{player.groupRank}}</td>
+							<td>					
+							 <!-- 
+							/////////////	this part not done !!!! 
+							 <div ng-init="questions = [
+      							{name:'John', age:25, gender:'boy'},
+      							{name:'Jessie', age:30, gender:'girl'},
+      							{name:'Johanna', age:28, gender:'girl'},
+      							{name:'Samantha', age:60, gender:'girl'}
+    						]">
+								<ul class="questionLayout">
+        							<li ng-repeat="question in questions" class="questionLayout">
+          								<i class="icon-ok-sign"></i>
+       								</li>
+      							</ul>
+							</div>	  -->
+
+							  <!-- <div>
+								<ul class="questionLayout">
+        							<li ng-repeat="num in getNumbers(5)" class="questionLayout">
+          								 <i class="icon-ok-sign"></i> 
+       								</li>
+      							</ul></div>   -->
+
+      							 <i class="icon-ok-sign"></i> 
+
+							</td>
+							<td>{{player.lastSolved}}</td> 
+						</tr>
+					</table>
+				</div>
+			</tab>
+
+			<tab heading="Round Title 2">
+				HELLLOOOOO ~!!! 
+			</tab>
+		</tabset>
+	</div>
+</div>

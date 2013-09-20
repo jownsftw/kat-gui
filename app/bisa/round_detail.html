@@ -1,0 +1,41 @@
+<style type="text/css">
+
+#roundDetails
+{
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#tableRound, th, td
+{
+	border: 1px solid black;
+}
+
+</style>
+
+<br/>
+
+<div class="container" ng-controller="TournamentRoundController">
+	<span id="roundDetails">Round Details</span>
+
+	<br/>
+
+	<table id="tableRound">
+		<th>Round Title</th>
+		<th>Duration(mins)</th>
+		<th>Number of Questions</th>
+		<th><button id="btnAddRound">+</button></th>
+
+		<tr ng-repeat="round in rounds">
+			<td>{{round.title}}</td>
+			<td>{{round.duration}}</td>
+			<td>{{round.noQuestion}}</td>
+			<td>
+				<button id="btnEdit" value="round.id" ng-click="editClick(round.id)">Edit</button>
+				<button id="btnDelete" value="round.id" ng-click="deleteClick(round.id)">Delete</button>
+			</td>
+		</tr>
+	</table>
+	<button id="btnFinalize">Finalize Tournament</button>
+</div>

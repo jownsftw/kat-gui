@@ -3213,3 +3213,37 @@ function MasteryCoachingQuizController($scope,$resource,$cookieStore,$location,$
 
 }
 
+
+function TournamentLiveController($scope,$resource,$cookieStore,$location,$http,$filter)
+	{
+
+		$scope.players = [
+     				{name:"John", groupName:"Group A", groupRank:"1", questionSolved:"4", lastSolved:"13.00"},
+      				{name:"Jessie", groupName:"Group B", groupRank:"1", questionSolved:"3", lastSolved:"14.00"},
+      				{name:"Johanna", groupName:"Group C", groupRank:"1", questionSolved:"3", lastSolved:"16.00"},
+      				{name:"Samantha", groupName:"Group A", groupRank:"2", questionSolved:"2", lastSolved:"18.00"}
+    			];
+
+		$scope.getNumbers = function(number)
+		{
+			var myarray = new Array(number);
+    		return myarray;
+		}
+	}
+
+function TournamentRoundController($scope,$resource,$cookieStore,$location,$http,$filter)
+	{
+		$scope.rounds = [
+     				{id:"123", title:"Round 1", duration:"60", noQuestion:"15"},
+      				{id:"321", title:"Round 2", duration:"50", noQuestion:"20"},
+       			];
+
+       	$scope.editClick = function(roundid) {
+    alert("For edit " + roundid );
+
+     };
+
+  $scope.deleteClick = function(roundid) {
+  alert("This round has been successfully deleted " + roundid);  };
+
+	}
