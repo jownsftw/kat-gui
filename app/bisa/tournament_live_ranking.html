@@ -62,14 +62,15 @@
       							</ul>
 							</div>	  -->
 
-							  <!-- <div>
+							<div>
 								<ul class="questionLayout">
-        							<li ng-repeat="num in getNumbers(5)" class="questionLayout">
-          								 <i class="icon-ok-sign"></i> 
+        							<li ng-repeat="num in getNumbers(player.questionSolved)" class="questionLayout">
+        								<i class="icon-ok-sign"></i> 
        								</li>
-      							</ul></div>   -->
+      							</ul>
+      						</div> 
 
-      							 <i class="icon-ok-sign"></i> 
+      							 {{player.questionSolved}}
 
 							</td>
 							<td>{{player.lastSolved}}</td> 

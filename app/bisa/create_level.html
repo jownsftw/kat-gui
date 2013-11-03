@@ -1,0 +1,73 @@
+<br/><br/>
+
+<div class="container">
+	<div ng-controller="PathController">
+		<h2><u>Choose Path</u></h2>
+		Path : <select ui-select2 ng-model="select2" id="pathSelect">
+    				<option value=""></option>
+    				<option ng-repeat="path in player_paths.paths" value="{{path.name}}">{{path.name}}</option>
+					</select>
+		<hr/>
+
+		<table>
+			<tr>
+				<td>
+					Language :
+				</td>
+				<td>
+					<u>{{path.language}}</u>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Name :
+				</td>
+				<td>
+					<u>{{path.name}}</u>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Description :
+				</td>
+				<td>
+					<u>{{path.description}}</u>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Specification :
+				</td>
+				<td>
+					<u></u>
+				</td>
+			</tr>
+		</table>
+		<hr/>
+	</div>
+	<div>
+		<h2><u>Create Level</u></h2>
+		<table>
+			<tr>
+				<td>
+					Name :
+				</td>
+				<td>
+					<input type="text" name="levelName"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td><input type="text" name="levelDescription" /></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="Save"></input>
+				</td>
+				<td>
+					<input type="submit" value="Cancel" ng-click="window.location.href='#round_edit'"></input>
+				</td>
+			</tr>	
+		</table>
+	</div>
+</div>

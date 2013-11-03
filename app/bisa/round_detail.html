@@ -1,10 +1,17 @@
 <style type="text/css">
 
-#roundDetails
+/*#roundDetails
 {
 	border-top: 1px solid black;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
+
+}*/
+
+#roundDetails
+{
+	border: 1px solid black;
+	padding: 10px;
 }
 
 #tableRound, th, td
@@ -16,26 +23,36 @@
 
 <br/>
 
-<div class="container" ng-controller="TournamentRoundController">
-	<span id="roundDetails">Round Details</span>
+<div id="roundDetails" class="container" ng-controller="TournamentController" ng-init="tournamentID=12760596;fetch_tournament(12760596);fetch_tournaments()">
+	<!-- <span id="roundDetails">Round Details</span> -->
+	<h1>Round Details</h1>
 
-	<br/>
+	<ol>
+      <li ng-repeat="entry in tournaments">
+        {{entry.description}}, {{entry.created}}, {{entry.tournamentID}}
+      </li>
+    </ol>
+	<input type="submit" value="Fetch Tournament" ng-click="fetch_tournament(12760596)"><br>
+idididid {{tournament.tournamentID}}
 
 	<table id="tableRound">
 		<th>Round Title</th>
-		<th>Duration(mins)</th>
+		 <th>Duration(mins)</th> 
 		<th>Number of Questions</th>
-		<th><button id="btnAddRound">+</button></th>
+		 <th><input type="submit" id="btnAddRound" ng-click="add_round(tournamentID)" value="+"></th>
 
-		<tr ng-repeat="round in rounds">
-			<td>{{round.title}}</td>
-			<td>{{round.duration}}</td>
-			<td>{{round.noQuestion}}</td>
+		<tr ng-repeat="entry in tournament.rounds">
+			<td>{{entry.description}}</td>
+			<td>{{entry.timelimit}}</td>
+			<td>{{entry.problemIDs.length}}</td>
 			<td>
-				<button id="btnEdit" value="round.id" ng-click="editClick(round.id)">Edit</button>
-				<button id="btnDelete" value="round.id" ng-click="deleteClick(round.id)">Delete</button>
+				<input type="submit" value="Edit Round" ng-click="fetch_round(entry.roundID)">
+				<input type="submit" value="Delete Round">
 			</td>
 		</tr>
 	</table>
-	<button id="btnFinalize">Finalize Tournament</button>
+	
+	<div style="text-align:right;">
+		<input type="submit" id="btnFinalize" value="Finalize Tournament">
+	</div>
 </div>

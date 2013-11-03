@@ -1,0 +1,120 @@
+<style type="text/css">
+	#overall{
+		border: 1px solid black;
+		padding: 5px;
+	}
+
+	#chosenRound td, th
+	{
+		border: 1px solid black;
+	}
+
+</style>
+
+<br/>
+
+<div id="overall" class="container" ng-controller="TournamentController" ng-init="fetch_round(14628705)">
+	
+	<div style="text-align:right;">
+		<input type="submit" value="Save Round">
+	</div>
+
+	<div id="roundDetails">
+		<table>
+			<tr>
+				<td>
+					Title :
+				</td>
+				<td>
+					<input type="text" ng-model="round.description">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Duration (mins) : 
+				</td>
+				<td>
+					<input type="text" ng-model="round.timelimit">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div ng-controller="ProblemController">
+    
+    <div ng-controller="ProblemsetController">
+
+	<div id="questions">
+		<tabset>
+			<tab heading="Question Bank">
+				<table>
+					<tr>
+						<td>
+							<br/>
+							Path : <br/>
+							<div class="dropdown" ng-controller="PathController" ng-init="fetch_game_paths()">
+								<!-- <a class="dropdown-toggle" ng-model="problemPath">
+									Choose a Path
+								</a>
+								<ul class="dropdown-menu" ng-change="get_problemsets(problemPath)" ng-repeat="item in game_paths.paths">
+									{{item.problemPath}} 
+								</ul> -->
+         <select ng-model="problemPath" ng-options="item.id as item.description for item in game_paths.paths" ng-change="get_problemsets(problemPath)"></select>
+							</div>
+							
+							<br/>
+							
+							Level : <br/>
+							<div ng-model="problemLevel">
+								<select class="tournamentMgmt" name="Level" id="levelSelectBox" multiple="multiple" size="6">
+									<option ng-repeat="level in problemsets.problemsets" value="{{level.id}}">
+										{{level.description}}
+									</option>
+								</select>
+
+								 
+							</div>
+							
+							<br/>
+							
+							<input type="submit" value="Search" ng-click="get_problems_for_problemset(problemLevel)">
+						</td>
+						<td style="vertical-align:top;">
+							<h2>Question Title</h2>
+
+							<div>
+								<table>
+									<tr ng-repeat="problem in problems.problems"><td>{{problem.name}}</td>
+										<td>
+											<input type="submit" value="Add" ng-click="clickalert(problem.id)">
+										</td>
+								</tr>
+							</table>
+							</div>
+							<!-- <pagination total-items="" page="currentpage"></pagnination> -->
+						</td>
+					</tr>
+				</table>
+			</tab>
+
+			<tab heading="Chosen Round Question">
+				<table id="chosenRound">
+					<th>Question Path</th>
+					<th>Question Title</th>
+					<th></th>
+					<tr>
+						<td>
+						</td>
+						<td>
+						</td>
+						<td>
+							<input type="submit" value="Delete">
+						</td>
+					</tr>
+				</table>
+			</tab>
+		</tabset>
+	</div>
+</div>
+</div>
+
+</div>
